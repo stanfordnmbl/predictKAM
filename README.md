@@ -5,7 +5,7 @@
 Predict the peak knee adduction moment during walking using neural network with motion capture marker position inputs.
 This repository holds the code and text for generating the manuscript on OpenSim Moco, a software toolkit for solving optimal control problems with OpenSim musculoskeletal models.
 
-The accompanying manuscript was first released as a bioRxiv preprint: .
+The accompanying manuscript was first released as a bioRxiv preprint: *link*.
 
 The code folder contains Python scripts to train and run a neural network to predict the peak KAM.
 
@@ -19,23 +19,36 @@ We used Python v3.6.8 to develop this code.  This code also uses the keras packa
 pip install -r requirements.txt
 ```
 ## Task
-Given only 3D motion capture marker positions, predict the knee adduction moment.
+Given only 3D motion capture marker positions, predict the peak knee adduction moment of each step during walking.
+
 ## The Dataset
-The input for this model has a final shape determined by the number of marker positions, velocities, acclerations, and leg step by number of time steps, by number of steps.  The output has a final shape of 1 (peak KAM value) by the number of steps.
+The input for this model has a final shape determined by the number of marker positions and leg step by number of time steps, by number of steps.  The output has a final shape of 1 (peak KAM value) by the number of steps.
 
-The data used to generate this model was collected from 3D motion capture data during gait from 98 people, giving a total of 128416 steps.  
+The data used in the final manuscript was collected from 3D motion capture data during gait from 109 people, giving a total of 142469 steps. The data provided in this repository is a subset of the data used in the final manuscript. It includes # of people without osteoarthritis, for a total of # steps.
 
-The input is the 3D position time series (30 steps) from 13 anatomical landmarks (Toe (R/L), Heel (R/L), Ankle(R/L), Knee (R/L), Front Pelvis (R/L), Back Pelvis (R/L), Neck) per step along with scalar anthropometric data. There are three additional columns: the leg step as a binary (1 for right or 0 for left), a height constant, and a weight constant, all propagated along the time series, giving the data a shape of (42, 8, 128416). After the data is loaded into the workspace, the height and weight columns are removed from the matrix and used to normalize the marker positions by height and knee adduction moment by weight.  Velocities and accelerations are calculated from the positions along the time series and added to the matrix, which gives a final input shape of (118, 8, 128416). The knee adduction moment data file is one peak value per step for a shape of (1,128416). The subject index data file is the subject number per step for a shape of (1,128416) and is used to split up the data by person.
+There are six matrices of data the model needs as input:
+1. markerPositions.mat: the 3D position time series (30 steps) from 13 anatomical landmarks (Toe (R/L), Heel (R/L), Ankle(R/L), Knee (R/L), Front Pelvis (R/L), Back Pelvis (R/L), Neck) per step
+2. KAM.mat: the knee adduction moment curve timeseries perstep
+3. leg.mat: the leg step as a binary (1 for right or 0 for left) propagated along the time series
+4. height.mat: a height constant propagated along the time series 
+5. weight.mat: a weight constant propagated along the time series 
+6. subind.mat: subject number per step - used to split up the data by person
+
+After the data is loaded into the workspace, the height and weight matrices are used to normalize the marker positions by height and the knee adduction moment by weight.
 
 ## Guidelines for Use
 The code performs the following:
-1. Imports the data
-3. Resizes the input and output matrices to the correct format
-4. Divides into Test, Dev, Train sets
-5. Flatten Input and Output Data (Fully connected only)
-6. Bulids the model
-7. Runs the model
-8. Evaluates the performance with r^2 and RMSE values
+1. Flag if you want to train the model on 3D, frontal plane, or sagittal plane data
+2. Imports the data
+3. Resizes the input and output matrices to the correct format, normalizes data, uses only first half of stance
+4. Calculates the peak KAM per step
+5. Divides into Test, Dev, Train sets
+6. If 3D model, then pulls out features from the LASSO regression (imports lassoInd.csv created outside of code)
+7. Flatten Input and Output Data
+8. Builds the model
+9. Runs the model
+10. Evaluates the performance with r^2 and MSE values
+11. Plots the peak KAM predictions for the test set
 
 Depending on the data being used, you may want to adjust and tune the model hyperparameters.
 
