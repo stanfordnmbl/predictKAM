@@ -24,7 +24,7 @@ Given only 3D motion capture marker positions, predict the peak knee adduction m
 ## The Dataset
 The input for this model has a final shape determined by the number of marker positions and leg step by number of time steps, by number of steps.  The output has a final shape of 1 (peak KAM value) by the number of steps.
 
-The data used in the final manuscript was collected from 3D motion capture data during gait from 109 people, giving a total of 142469 steps. The data provided in this repository is a subset of the data used in the final manuscript. It includes # of people without osteoarthritis, for a total of # steps.
+The data used in the final manuscript was collected from 3D motion capture data during gait from 86 people, giving a total of 112730 steps. The first 66 subjects in the dataset have medial compartment knee osteoarthritis, and the final 20 subjects were young adults without osteoarthritis. 
 
 There are six matrices of data the model needs as input:
 1. markerPositions.mat: the 3D position time series (30 steps) from 13 anatomical landmarks (Toe (R/L), Heel (R/L), Ankle(R/L), Knee (R/L), Front Pelvis (R/L), Back Pelvis (R/L), Neck) per step
