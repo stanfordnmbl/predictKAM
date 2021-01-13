@@ -10,7 +10,7 @@ Given only 3D motion capture marker positions, predict the peak knee adduction m
 
 @melboswell - add high quality figure 1
 
-## Running the code This Repository
+## Running the code
 
 ### Install Requirements
 We used Python v3.6.8 to develop these models. Models were trained on a GPU, but will also train on a CPU rather efficiently.
