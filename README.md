@@ -23,7 +23,7 @@ pip install -r requirements.txt
 After cloning the repository, download the dataset from [this link on SimTK](https://simtk.org/projects/predictkam), and put the _inputData.npy_ file in the _Data_ folder of the cloned repo.
 
 ### Running the code
-The jupyter notebook pre-processes the data and allows for you to either load the previously-trained models from the paper and predict on held-out data, or to train the model from scratch using the dataset from the paper.
+The _PredictKAM.ipynb_ jupyter notebook pre-processes the data and allows for you to either load the previously-trained models from the paper and predict on held-out data, or to train the model from scratch using the dataset from the paper.
 
 ## The Dataset
 The input for this model has a final shape determined by the number of marker positions and leg step by number of time steps, by number of steps.  The output has a final shape of 1 (peak KAM value) by the number of steps.
