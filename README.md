@@ -1,6 +1,12 @@
 # Predicting the Knee Adduction Moment
 *Authors: Melissa Boswell and Scott Uhlrich*
 
+This repository includes the models and dataset for the following paper. Please cite this paper if using this code or dataset:
+
+Boswell MA*, Uhlrich SD, Kidzinski L, Thomas K, Kolesar JA, Gold GE, Beaupre GS, Delp SL, 2021. A neural network to predict the knee adduction  moment in patients with osteoarthritis using anatomical landmarks obtainable from 2D video analysis. _Osteoarthr. Cartil._, _In Press_. [Link to manuscript.] (http://nmbl.stanford.edu/wp-content/uploads/BoswellUhlrich_NN_KAM_PreProofOAC.pdf)
+
+*contributed equally
+
 ## This Repository
 Predict the peak knee adduction moment during walking using neural network with motion capture marker position inputs.
 This repository holds the code and text for generating the manuscript on OpenSim Moco, a software toolkit for solving optimal control problems with OpenSim musculoskeletal models.
@@ -43,12 +49,13 @@ The code performs the following:
 3. Resizes the input and output matrices to the correct format, normalizes data, uses only first half of stance
 4. Calculates the peak KAM per step
 5. Divides into Test, Dev, Train sets
-6. If 3D model, then pulls out features from the LASSO regression (imports lassoInd.csv created outside of code)
+6. If 3D model, then pulls out features from the LASSO regression
 7. Flatten Input and Output Data
-8. Builds the model
-9. Runs the model
-10. Evaluates the performance with r^2 and MSE values
-11. Plots the peak KAM predictions for the test set
+8. Predict KAM using a pre-trained model
+9. Builds the model (if training from scratch)
+10. Runs the model
+11. Evaluates the performance with r^2, mse, and MAE for a selected split of the dataset
+12. Plots the peak KAM predictions
 
 Depending on the data being used, you may want to adjust and tune the model hyperparameters.
 
