@@ -20,7 +20,7 @@ Install required packages:
 pip install -r requirements.txt
 ```
 ### Download dataset
-After cloning the repository, download the dataset from [this link on SimTK](https://simtk.org/projects/predictkam), and put the _inputData.npy_ file in the _Data_ folder.
+After cloning the repository, download the dataset from [this link on SimTK](https://simtk.org/projects/predictkam), and put the _inputData.npy_ file in the _Data_ folder of the cloned repo.
 
 ### Running the code
 The jupyter notebook pre-processes the data and allows for you to either load the previously-trained models from the paper and predict on held-out data, or to train the model from scratch using the dataset from the paper.
