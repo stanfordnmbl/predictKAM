@@ -1,6 +1,7 @@
 # A neural network to predict the knee adduction moment using the positions of anatomical landmarks obtainable from 2D or 3D video
 *Authors: Melissa Boswell and Scott Uhlrich*
 
+## Publication
 This repository includes the models and dataset for the following paper. Please cite this paper if using this code or dataset:
 
 Boswell MA*, Uhlrich SD, Kidzinski L, Thomas K, Kolesar JA, Gold GE, Beaupre GS, Delp SL, 2021. A neural network to predict the knee adduction  moment in patients with osteoarthritis using anatomical landmarks obtainable from 2D video analysis. _Osteoarthr. Cartil._, _In Press_. *contributed equally. [Link to download](http://nmbl.stanford.edu/wp-content/uploads/BoswellUhlrich_NN_KAM_PreProofOAC.pdf)
@@ -11,6 +12,7 @@ Given only 3D motion capture marker positions, predict the peak knee adduction m
 @melboswell - add high quality figure 1
 
 ## Running the code
+The results can be visualized in the PredictKAM.ipynb jupyter notebook without re-running the code.
 
 ### Install Requirements
 We used Python v3.6.8 to develop these models. Models were trained on a GPU, but will also train on a CPU rather efficiently.
