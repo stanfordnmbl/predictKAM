@@ -9,7 +9,7 @@ Boswell MA*, Uhlrich SD*, Kidzinski L, Thomas K, Kolesar JA, Gold GE, Beaupre GS
 ## Task
 Given only the position of motion capture marker positions, predict the peak knee adduction moment of each step during walking. Frontal-plane or sagittal-plane marker positions can also be used, to simulate keypoints identified from 2D video.
 
-![Figure 1](https://github.com/stanfordnmbl/predictKAM/blob/master/figures/Figure1.pdf)
+![Figure 1](https://github.com/stanfordnmbl/predictKAM/blob/master/figures/Figure1.pdf?raw=true)
 
 ## Running the code
 The model performance using 3D positions can be visualized in the PredictKAM.ipynb jupyter notebook without re-running the code.
