@@ -61,5 +61,8 @@ The code performs the following:
 12. Plots the peak KAM predictions
 
 ## Resources
+Link to the associated paper
+- [A neural network to predict the knee adduction moment in patients with osteoarthritis using anatomical landmarks obtainable from 2D video analysis](https://doi.org/10.1016/j.joca.2020.12.017)
+
 More information on data collection and preprocessing in the paper as well as the below paper:
 - [Subject-specific toe-in or toe-out gait modifications reduce the larger knee adduction moment peak more than a non-personalized approach](https://www.ncbi.nlm.nih.gov/pubmed/29174534)
