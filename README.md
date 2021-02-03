@@ -4,7 +4,9 @@
 ## Publication
 This repository includes the models and dataset for the following paper. Please cite this paper if using this code or dataset:
 
-Boswell MA*, Uhlrich SD*, Kidzinski L, Thomas K, Kolesar JA, Gold GE, Beaupre GS, Delp SL, 2021. A neural network to predict the knee adduction  moment in patients with osteoarthritis using anatomical landmarks obtainable from 2D video analysis. _Osteoarthr. Cartil._, _In Press_. *contributed equally. [Link to download](http://nmbl.stanford.edu/wp-content/uploads/BoswellUhlrich_NN_KAM_PreProofOAC.pdf)
+Boswell MA*, Uhlrich SD*, Kidzinski L, Thomas K, Kolesar JA, Gold GE, Beaupre GS, Delp SL, 2021. A neural network to predict the knee adduction  moment in patients with osteoarthritis using anatomical landmarks obtainable from 2D video analysis. _Osteoarthr. Cartil._, _In Press_. *contributed equally.
+
+![Download Paper](https://github.com/stanfordnmbl/predictKAM/blob/master/paper/BOSWELL_UHLRICH_Delp_2021.pdf?raw=true)
 
 ## Task
 Given only the position of motion capture marker positions, predict the peak knee adduction moment of each step during walking. Frontal-plane or sagittal-plane marker positions can also be used, to simulate keypoints identified from 2D video.
